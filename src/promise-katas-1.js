@@ -33,13 +33,25 @@ Remember, a Promise can only resolve successfully, or reject when it fails to re
 // when we call returnPromise like 'returnPromise()' we expect our function to use the 
 // 'resolve' Promise callback function in order to resolve successfully
 
-const returnPromise = () => { };
+const returnPromise = () => {
+    const prom = new Promise((resolve, reject) => {
+        if(true) resolve();
+        else reject('The promise is expected to resolve');
+    });
+    return prom;
+ };
 
 // 2 Create a function that returns a promise which returns 10 if it resolves succesfully
 // Example:
 // returnTen() resolves to the value 10
 
-const returnTen = () => { };
+const returnTen = () => {
+    const prom = new Promise((resolve, reject) => {
+        if(true) resolve(10);
+        else reject('The promise is expected to resolve with 10!');
+    });
+    return prom;
+ };
 
 // 3 Create a function that returns a promise which returns 'string' if it resolves succesfully
 // Example:
